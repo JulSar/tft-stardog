@@ -21,7 +21,6 @@ ENV STARDOG_HOME=/data/stardog
 COPY stardog-license-key.bin /$STARDOG_HOME
 
 EXPOSE 5820
-
-RUN ./opt/stardog/bin/stardog-admin server start --bind 127.0.0.1 --port 5820 --disable-security && ./opt/stardog/bin/stardog-admin db create -n test data.ttl 
+RUN ./opt/stardog/bin/stardog-admin server start --bind 127.0.0.1 --port 49160 --disable-security && ./opt/stardog/bin/stardog-admin db create -n test data.ttl 
 
 
