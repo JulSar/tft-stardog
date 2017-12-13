@@ -10,7 +10,14 @@ RUN curl http://packages.stardog.com/rpms/stardog.repo > /etc/yum.repos.d/stardo
 
 RUN yum install -y stardog && yum clean all
 
+WORKDIR /
+
+RUN mkdir /data/stardog
+
 ENV STARDOG_HOME=/data/stardog
 
+COPY stardog-license-key.bin /$STARDOG_HOME
+
+#ENTRYPOINT ["/opt/stardog/bin/stardog-admin", "server start"]
 
 EXPOSE 5820
