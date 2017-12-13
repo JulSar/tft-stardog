@@ -12,6 +12,8 @@ RUN yum install -y stardog && yum clean all
 
 WORKDIR /
 
+RUN mkdir /data/
+
 RUN mkdir /data/stardog
 
 ENV STARDOG_HOME=/data/stardog
