@@ -18,7 +18,8 @@ env:
     - SOFTWARE_DESCRIBE="Stardog"
     - VERSION="3.4.0"
     #- SPARQLSCORE_DATABASE="134.158.74.247"
-    - SPARQLSCORE_DATABASE="127.0.0.1:5820" #local
+    #- SPARQLSCORE_DATABASE="127.0.0.1:5820" #local
+    - SPARQLSCORE_DATABASE="127.0.0.1:49160" #local
 
 services:
   - docker
@@ -37,7 +38,7 @@ script:
   -   docker run --privileged --name instance.tft.example1.org -h example1.org -d bordercloud/tft-virtuoso7-stable
   -   docker run --privileged --name instance.tft.example2.org -h example2.org -d bordercloud/tft-virtuoso7-stable
   -   docker run --privileged --name instance.tft_database -d bordercloud/tft-jena-fuseki
-  -   docker run --privileged --name instance.stardog -h stardog -d stardog
+  -   docker run --privileged --name instance.stardog -p 49160:5820 -h stardog -d stardog
 
 ##  -   docker run --privileged --name instance.tft_database -d tft-jena-fuseki
 
