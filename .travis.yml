@@ -13,7 +13,7 @@ notifications:
 
 env:
   global:
-    - URI="https://travis-ci.org/BorderCloud/tft-jena-fuseki/builds/$((TRAVIS_JOB_ID - 1))"
+    - URI="https://travis-ci.org/JulSar/tft-stardog/builds/$((TRAVIS_JOB_ID - 1))"
     - NAME="Stardog"
     - SOFTWARE_DESCRIBE="Stardog"
     - VERSION="3.4.0"
@@ -49,8 +49,8 @@ script:
   -   git clone --recursive https://github.com/BorderCloud/TFT.git
   -   cd TFT
   -   composer install --dev
-  -   php ./tft-testsuite -a -t fuseki -q http://${SPARQLSCORE_DATABASE}/test/query -u http://${SPARQLSCORE_DATABASE}/test/update
-  -   php ./tft -t fuseki -q http://${SPARQLSCORE_DATABASE}/test/query -u http://${SPARQLSCORE_DATABASE}/test/update -tt stardog -tq http://172.17.0.2/test/query -tu http://172.17.0.2/test/update -r ${URI} -o ./junit --softwareName="${NAME}"  --softwareDescribeTag=${VERSION}  --softwareDescribe="${TRAVIS_COMMIT}"
-  -   php ./tft-score -t fuseki -q http://${SPARQLSCORE_DATABASE}/test/query -u http://${SPARQLSCORE_DATABASE}/test/update -r  ${URI}
+  -   php ./tft-testsuite -a -t stardog -q http://${SPARQLSCORE_DATABASE}/test/query -u http://${SPARQLSCORE_DATABASE}/test/update
+  -   php ./tft -t stardog -q http://${SPARQLSCORE_DATABASE}/test/query -u http://${SPARQLSCORE_DATABASE}/test/update -tt stardog -tq http://172.17.0.2/test/query -tu http://172.17.0.2/test/update -r ${URI} -o ./junit --softwareName="${NAME}"  --softwareDescribeTag=${VERSION}  --softwareDescribe="${TRAVIS_COMMIT}"
+  -   php ./tft-score -t stardog -q http://${SPARQLSCORE_DATABASE}/test/query -u http://${SPARQLSCORE_DATABASE}/test/update -r  ${URI}
 
 
