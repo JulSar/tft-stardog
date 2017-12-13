@@ -20,6 +20,8 @@ ENV STARDOG_HOME=/data/stardog
 
 COPY stardog-license-key.bin /$STARDOG_HOME
 
-#ENTRYPOINT ["./opt/stardog/bin/stardog-admin", "server", "start"]
+CMD ["./opt/stardog/bin/stardog-admin", "server", "start"]
+
+CMD ["./opt/stardog/bin/stardog-admin", "db", "create", "-n", "test", "data.ttl"]
 
 EXPOSE 5820
