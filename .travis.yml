@@ -19,7 +19,7 @@ env:
     - VERSION="3.4.0"
     #- SPARQLSCORE_DATABASE="134.158.74.247"
     #- SPARQLSCORE_DATABASE="127.0.0.1:5820" #local
-    - SPARQLSCORE_DATABASE="127.0.0.1:49160" #local
+    - SPARQLSCORE_DATABASE="0.0.0.0:49160" #local
 
 services:
   - docker
