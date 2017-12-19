@@ -20,9 +20,9 @@ ENV STARDOG_HOME=/data/stardog
 
 COPY stardog-license-key.bin /$STARDOG_HOME
 
-COPY initDB.sh /
+COPY initDB.sh /$STARDOG_HOME
 
-RUN chmod +x /initDB.sh
+RUN chmod 777 /$STARDOG_HOME/initDB.sh
 
 EXPOSE 5820
 
