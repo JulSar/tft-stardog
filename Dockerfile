@@ -22,7 +22,7 @@ COPY stardog-license-key.bin /$STARDOG_HOME
 
 COPY initDB.sh /
 
-RUN chown +x /initDB.sh
+RUN chmod +x /initDB.sh
 
 EXPOSE 5820
 
