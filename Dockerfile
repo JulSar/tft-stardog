@@ -22,6 +22,8 @@ COPY stardog-license-key.bin /$STARDOG_HOME
 
 COPY initDB.sh /
 
+RUN chown +x /initDB.sh
+
 EXPOSE 5820
 
 #RUN ./opt/stardog/bin/stardog-admin server start --bind 127.0.0.1 --port 49160 && ./opt/stardog/bin/stardog-admin db create -n test data.ttl
