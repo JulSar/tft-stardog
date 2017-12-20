@@ -26,6 +26,6 @@ RUN chmod 777 /$STARDOG_HOME/initDB.sh
 
 EXPOSE 5820
 
-#RUN ./opt/stardog/bin/stardog-admin server start --bind 127.0.0.1 --port 49160 && ./opt/stardog/bin/stardog-admin db create -n test data.ttl
+#RUN /opt/stardog/bin/stardog-admin server start --bind 127.0.0.1 --port 49160 && /opt/stardog/bin/stardog-admin db create -n test data.ttl
 
 CMD ["/usr/sbin/init"]
