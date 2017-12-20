@@ -24,7 +24,7 @@ COPY initDB.sh /$STARDOG_HOME
 
 RUN chmod 777 /$STARDOG_HOME/initDB.sh
 
-RUN systemctl start
+RUN systemctl start stardog
 
 EXPOSE 5820
 
