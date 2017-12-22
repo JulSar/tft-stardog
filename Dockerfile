@@ -32,4 +32,6 @@ EXPOSE 5820
 
 #CMD ["/usr/sbin/init"]
 
-CMD opt/stardog/bin/stardog-admin server start --disable-security && sleep 1 && while true; do sleep 1; done
+#CMD opt/stardog/bin/stardog-admin server start --disable-security && sleep 1 && while true; do sleep 1; done
+
+CMD sleep 1 && while true; do sleep 1; done
