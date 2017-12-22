@@ -13,7 +13,7 @@ RUN curl http://packages.stardog.com/rpms/stardog.repo > /etc/yum.repos.d/stardo
 RUN yum install -y stardog && yum clean all
 
 ADD stardog-license-key.bin ${STARDOG_INSTALL_DIR}
-ADD init_stardod.sh ${STARDOG_INSTALL_DIR}
+ADD init_stardog.sh ${STARDOG_INSTALL_DIR}
 
 WORKDIR ${STARDOG_HOME}
 
