@@ -20,7 +20,7 @@ env:
     #- SPARQLSCORE_DATABASE="134.158.74.247"
     #- SPARQLSCORE_DATABASE="127.0.0.1:5820" #local
     #- SPARQLSCORE_DATABASE="0.0.0.0:49160" #local
-    - SPARQLSCORE_DATABASE="127.0.0.1:49160" #local
+    - SPARQLSCORE_DATABASE="127.0.0.1:5820" #local
     #- SPARQLSCORE_DATABASE="134.158.74.247" #local
 
 services:
@@ -30,7 +30,7 @@ before_install:
   - docker pull bordercloud/tft-jena-fuseki
   - docker pull bordercloud/tft-virtuoso7-stable
   - docker build -t stardog .
-  - chmod +x curl_script.sh
+  #- chmod +x curl_script.sh
 
 
 script:
@@ -40,8 +40,8 @@ script:
   -   docker run --privileged --name instance.tft.example1.org -h example1.org -d bordercloud/tft-virtuoso7-stable
   -   docker run --privileged --name instance.tft.example2.org -h example2.org -d bordercloud/tft-virtuoso7-stable
   -   docker run --privileged --name instance.tft_database -d bordercloud/tft-jena-fuseki
-  -   docker run --privileged --name instance.stardog -p 49160:5820 -h stardog -t -d stardog
-  -   docker exec -t -d instance.stardog /data/stardog/initDB.sh
+  -   docker run --privileged --name instance.stardog -p 5820:5820 -h stardog -t -d stardog
+#  -   docker exec -t -d instance.stardog /data/stardog/initDB.sh
 ##  -   docker run --privileged --name instance.tft_database -d tft-jena-fuseki
 
 ## Run quick test
@@ -50,7 +50,7 @@ script:
 #  -   docker run --privileged --name instance.tft.example1.org -h example1.org -d bordercloud/tft-virtuoso7-stable
 #  -   docker run --privileged --name instance.tft.example2.org -h example2.org -d bordercloud/tft-virtuoso7-stable
 #  -   docker run --privileged --name instance.tft_database -d bordercloud/tft-jena-fuseki
-  -   ./curl_script.sh
+#  -   ./curl_script.sh
   -   git clone --recursive https://github.com/JulSar/TFT.git
   -   cd TFT
   -   composer install --dev  

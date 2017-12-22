@@ -1,37 +1,22 @@
 FROM centos:centos7
 
-MAINTAINER baptiste <baptistezegre@gmail.com>
+ENV STARDOG_HOME=/data/stardog
+ENV STARDOG_INSTALL_DIR = /opt/stardog
+
+RUN mkdir -p ${STARDOG_HOME}
+RUN mkdir -p ${STARDOG_INSTALL_DIR}
 
 RUN yum -y update && yum clean all
-
 RUN yum -y install java && yum clean all
 
 RUN curl http://packages.stardog.com/rpms/stardog.repo > /etc/yum.repos.d/stardog.repo
-
 RUN yum install -y stardog && yum clean all
 
-WORKDIR /
+ADD stardog-license-key.bin ${STARDOG_INSTALL_DIR}
+ADD init_stargod.sh ${STARDOG_INSTALL_DIR}
 
-RUN mkdir /data/
+WORKDIR ${STARDOG_HOME}
 
-RUN mkdir /data/stardog
-
-ENV STARDOG_HOME=/data/stardog
-
-COPY stardog-license-key.bin /$STARDOG_HOME
-
-COPY initDB.sh /$STARDOG_HOME
-
-RUN chmod 777 /$STARDOG_HOME/initDB.sh
-
-#RUN systemctl start stardog
+CMD ${STARDOG_INSTALL_DIR}/init_stardog.sh
 
 EXPOSE 5820
-
-#RUN /opt/stardog/bin/stardog-admin server start --bind 127.0.0.1 --port 49160 && ./opt/stardog/bin/stardog-admin db create -n test data.ttl
-
-CMD ["/usr/sbin/init"]
-
-#CMD opt/stardog/bin/stardog-admin server start --disable-security && sleep 1 && while true; do sleep 1; done
-
-#CMD sleep 1 && while true; do sleep 1; done
