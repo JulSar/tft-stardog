@@ -30,7 +30,7 @@ before_install:
   - docker pull bordercloud/tft-jena-fuseki
   - docker pull bordercloud/tft-virtuoso7-stable
   - docker build -t stardog .
-  #- chmod +x curl_script.sh
+  - chmod +x curl_script.sh
 
 
 script:
@@ -50,7 +50,7 @@ script:
 #  -   docker run --privileged --name instance.tft.example1.org -h example1.org -d bordercloud/tft-virtuoso7-stable
 #  -   docker run --privileged --name instance.tft.example2.org -h example2.org -d bordercloud/tft-virtuoso7-stable
 #  -   docker run --privileged --name instance.tft_database -d bordercloud/tft-jena-fuseki
-#  -   ./curl_script.sh
+  -   ./curl_script.sh
   -   git clone --recursive https://github.com/JulSar/TFT.git
   -   cd TFT
   -   composer install --dev  
