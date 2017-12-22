@@ -30,6 +30,7 @@ before_install:
   - docker pull bordercloud/tft-jena-fuseki
   - docker pull bordercloud/tft-virtuoso7-stable
   - docker build -t stardog .
+  - chmod +x curl_script.sh
 
 
 script:
