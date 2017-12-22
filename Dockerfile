@@ -24,10 +24,12 @@ COPY initDB.sh /$STARDOG_HOME
 
 RUN chmod 777 /$STARDOG_HOME/initDB.sh
 
-RUN systemctl start stardog
+#RUN systemctl start stardog
 
 EXPOSE 5820
 
 #RUN /opt/stardog/bin/stardog-admin server start --bind 127.0.0.1 --port 49160 && ./opt/stardog/bin/stardog-admin db create -n test data.ttl
 
-CMD ["/usr/sbin/init"]
+#CMD ["/usr/sbin/init"]
+
+CMD opt/stardog/bin/stardog-admin server start --disable-security && sleep 1 && while (pidof java > /dev/null); do sleep 1; done
