@@ -13,8 +13,8 @@ RUN curl http://packages.stardog.com/rpms/stardog.repo > /etc/yum.repos.d/stardo
 RUN yum install -y stardog && yum clean all
 
 COPY stardog-license-key.bin /opt/stardog
-COPY init_stardog.sh /opt/stardog
+COPY init_stardog.sh /data/stardog
 
 WORKDIR /data/stardog
-CMD /opt/stardog/init_stardog.sh && /usr/sbin/init
+CMD ["/usr/sbin/init"]
 EXPOSE 5820
