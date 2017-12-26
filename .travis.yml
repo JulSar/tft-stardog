@@ -41,6 +41,7 @@ script:
   -   docker run --privileged --name instance.tft.example2.org -h example2.org -d bordercloud/tft-virtuoso7-stable
   -   docker run --privileged --name instance.tft_database -d bordercloud/tft-jena-fuseki
   -   docker run --privileged --name instance.stardog -p 127.0.0.1:5820:5820 -it -d stardog
+  -   docker exec -t -d instance.stardog chmod +x /data/stardog/init_stardog.sh
   -   docker exec -t -d instance.stardog /data/stardog/init_stardog.sh
 ##  -   docker run --privileged --name instance.tft_database -d tft-jena-fuseki
 
