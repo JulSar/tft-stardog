@@ -16,5 +16,5 @@ COPY stardog-license-key.bin /opt/stardog
 COPY init_stardog.sh /opt/stardog
 
 WORKDIR /data/stardog
-CMD /opt/stardog/init_stardog.sh && /usr/sbin/init && netstat -an|grep LISTEN
+CMD /opt/stardog/init_stardog.sh && /usr/sbin/init
 EXPOSE 5820
