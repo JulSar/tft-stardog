@@ -53,7 +53,7 @@ script:
 #  -   docker run --privileged --name instance.tft_database -d bordercloud/tft-jena-fuseki
   -   sleep 15
 #  -   status docker
-#  -   docker ps
+  -   docker ps
   -   ./curl_script.sh
  # -   netstat -an|grep LISTEN
 #  -   docker exec instance.stardog bash -c 'netstat -an' | grep LISTEN
