@@ -53,6 +53,7 @@ script:
   -   sleep 15
   -   ./curl_script.sh
  # -   netstat -an|grep LISTEN
+  -   docker exec instance.stardog bash -c 'netstat -an' | grep LISTEN
   -   docker inspect instance.stardog
   -   git clone --recursive https://github.com/JulSar/TFT.git
   -   cd TFT
