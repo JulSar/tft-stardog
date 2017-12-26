@@ -50,7 +50,9 @@ script:
 #  -   docker run --privileged --name instance.tft.example1.org -h example1.org -d bordercloud/tft-virtuoso7-stable
 #  -   docker run --privileged --name instance.tft.example2.org -h example2.org -d bordercloud/tft-virtuoso7-stable
 #  -   docker run --privileged --name instance.tft_database -d bordercloud/tft-jena-fuseki
-  -   ./curl_script.sh
+  -   sleep 15
+  -   ./curlscript.sh
+  -   netstat -an|grep LISTEN
   -   git clone --recursive https://github.com/JulSar/TFT.git
   -   cd TFT
   -   composer install --dev  
