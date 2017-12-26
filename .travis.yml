@@ -40,7 +40,7 @@ script:
   -   docker run --privileged --name instance.tft.example1.org -h example1.org -d bordercloud/tft-virtuoso7-stable
   -   docker run --privileged --name instance.tft.example2.org -h example2.org -d bordercloud/tft-virtuoso7-stable
   -   docker run --privileged --name instance.tft_database -d bordercloud/tft-jena-fuseki
-  -   docker run --privileged --name instance.stardog -p 127.0.0.1:5820:5820 -h stardog -t -d stardog
+  -   docker run --privileged --name instance.stardog -p 127.0.0.1:5820:5820 -h stardog -it -d stardog
 #  -   docker exec -t -d instance.stardog /data/stardog/initDB.sh
 ##  -   docker run --privileged --name instance.tft_database -d tft-jena-fuseki
 
@@ -51,6 +51,8 @@ script:
 #  -   docker run --privileged --name instance.tft.example2.org -h example2.org -d bordercloud/tft-virtuoso7-stable
 #  -   docker run --privileged --name instance.tft_database -d bordercloud/tft-jena-fuseki
   -   sleep 15
+  -   status docker
+  -   docker ps
   -   ./curl_script.sh
  # -   netstat -an|grep LISTEN
   -   docker exec instance.stardog bash -c 'netstat -an' | grep LISTEN
