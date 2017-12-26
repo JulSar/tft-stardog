@@ -6,8 +6,8 @@ fi
 echo "[INFO] Starting Stardog server"
 /opt/stardog/bin/stardog-admin server start
 echo "[INFO] Creating database <test>"
-/opt/stardog/bin/stardog-admin db create -n test
-echo "[INFO] Restarting Stardog"
-/opt/stardog/bin/stardog-admin server stop
-/opt/stardog/bin/stardog-admin server start --foreground
-echo "[INFO] Stardog running..."
+/opt/stardog/bin/stardog-admin db create -n test data.ttl
+#echo "[INFO] Restarting Stardog"
+# /opt/stardog/bin/stardog-admin server stop
+# /opt/stardog/bin/stardog-admin server start --foreground
+# echo "[INFO] Stardog running..."
