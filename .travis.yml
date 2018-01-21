@@ -54,8 +54,8 @@ script:
   -   sleep 15
   -   status docker
   -   docker ps
+  -   docker exec -t -d instance.stardog /opt/stardog/bin/stardog-admin server status
   -   ./curl_script.sh
-  -   cat /tmp/dump.txt
  # -   netstat -an|grep LISTEN
 #  -   docker exec instance.stardog bash -c 'netstat -an' | grep LISTEN
   #-   docker inspect instance.stardog
