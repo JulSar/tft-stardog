@@ -4,7 +4,7 @@ if [ ! -f /data/stardog/stardog-license-key.bin ]; then
 fi
 
 echo "[INFO] Starting Stardog server"
-/opt/stardog/bin/stardog-admin server start
+/opt/stardog/bin/stardog-admin server start --disable-security
 echo "[INFO] Creating database <test>"
 /opt/stardog/bin/stardog-admin db create -n test
 echo "[INFO] Restarting Stardog"
