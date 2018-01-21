@@ -2,7 +2,7 @@ FROM centos:centos7
 
 ENV STARDOG_HOME=/data/stardog
 ENV STARDOG_INSTALL_DIR = /opt/stardog
-ENV STARDOG_JAVA_ARGS="-Xmx8g -Xms8g -XX:MaxDirectMemorySize=2g"
+ENV STARDOG_JAVA_ARGS="-Xmx2g -Xms2g -XX:MaxDirectMemorySize=1g"
 
 RUN mkdir -p /data/stardog
 RUN mkdir -p /opt/stardog

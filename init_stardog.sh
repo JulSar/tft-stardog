@@ -8,6 +8,6 @@ echo "[INFO] Starting Stardog server"
 echo "[INFO] Creating database <test>"
 /opt/stardog/bin/stardog-admin db create -n test
 echo "[INFO] Restarting Stardog"
-/opt/stardog/bin/stardog-admin server stop
-/opt/stardog/bin/stardog-admin server start --foreground  --disable-security
+#/opt/stardog/bin/stardog-admin server stop
+#/opt/stardog/bin/stardog-admin server start --foreground  --disable-security
 echo "[INFO] Stardog running..."
