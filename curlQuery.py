@@ -8,7 +8,7 @@ headers = {
     'Content-Type': 'text/plain',
 }
 
-response = requests.post('http://localhost:5820/test/transaction/begin', headers=headers)
+response = requests.post('http://localhost:49160/test/transaction/begin', headers=headers)
 
 print(response.text)
 transaction_id = response.text
@@ -23,7 +23,7 @@ headers = {
 }
 
 #data = open('themes.ttl')
-url = "http://localhost:5820/test/{}/add?graph-uri={}".format(transaction_id,graph_uri)
+url = "http://localhost:49160/test/{}/add?graph-uri={}".format(transaction_id,graph_uri)
 response = requests.post(url , headers=headers)
 print("[INFO] Querying: {}".format(response.url))
 print(response.status_code)
@@ -32,6 +32,6 @@ headers = {
     'Authorization': 'Basic YWRtaW46YWRtaW4=',
     'Content-Type': 'text/plain',
 }
-url = "http://localhost:5820/test/transaction/commit/{}".format(transaction_id)
+url = "http://localhost:49160/test/transaction/commit/{}".format(transaction_id)
 response = requests.post(url, headers=headers)
 print(response.status_code)
