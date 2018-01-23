@@ -5,6 +5,7 @@ fi
 
 echo "[INFO] Starting Stardog server"
 /opt/stardog/bin/stardog-admin server start --foreground --disable-security
+sleep 15
 echo "[INFO] Creating database <test>"
 /opt/stardog/bin/stardog-admin db create -n test 
 # echo "[INFO] Restarting Stardog"
