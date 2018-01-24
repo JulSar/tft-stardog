@@ -57,6 +57,7 @@ script:
   -   docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' instance.tft.example.org
   -   docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' instance.tft.example1.org
   -   docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' instance.tft.example2.org
+  -   docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' instance.tft_database
   -   docker exec -t -d instance.stardog /opt/stardog/bin/stardog-admin server status
   -   docker exec -t -d instance.stardog /opt/stardog/bin/stardog-admin db create -n testDB 
   -   sleep 30
